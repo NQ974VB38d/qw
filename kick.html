@@ -15,7 +15,7 @@
         async function kickPlayer() {
             const playerId = document.getElementById('playerId').value;
             const reason = document.getElementById('reason').value;
-            const response = await fetch(`http://http://176.97.212.38:30120//kick?playerId=${playerId}&reason=${reason}`);
+            const response = await fetch('http://176.97.212.38:30120/kick?playerId=123&reason=test');
             const result = await response.text();
             alert(result);
         }
