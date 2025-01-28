@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Server</title>
+</head>
+<body>
+    <h1>Kick Player</h1>
+    <input type="text" id="playerId" placeholder="Player ID">
+    <input type="text" id="reason" placeholder="Reason">
+    <button onclick="kickPlayer()">Kick Player</button>
+
+    <script>
+        async function kickPlayer() {
+            const playerId = document.getElementById('playerId').value;
+            const reason = document.getElementById('reason').value;
+            const response = await fetch(`http://yourserverip:port/kick?playerId=${playerId}&reason=${reason}`);
+            const result = await response.text();
+            alert(result);
+        }
+    </script>
+</body>
+</html>
